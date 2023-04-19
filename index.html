@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio site speter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -14,27 +15,40 @@
         <a href="#" class="logo">SPETER</a>
 
         <nav class="navbar">
+            <ul class="link">
            <a href="#"style="--i:1;" class="active">Home</a>
            <a href="#"style="--i:2;">About</a>
            <a href="#"style="--i:3;">Skills</a>
            <a href="#"style="--i:3;">Portfolio</a>
            <a href="#"style="--i:5;">Contact </a>
-
+        </ul>
+           <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
         </nav>
    
-    </header>
-
+   
+    <div class="dropdown_menu">
+        <li><a href="hero">home</a>
+          <li><a href="about">about</a>
+          <li><a href="skills">skills</a>
+          <li><a href="Portfolio">Portfolio</a>
+          <li><a href="contact">contact</a> 
+</div>
+</header>
     <section class="home">
         <div class="home-sci">
             <a href="#"><i class='bx bxl-facebook'></i></a>
             <a href="#"><i class='bx bxl-instagram' ></i></a>
             <a href="#"><i class='bx bxl-tiktok' ></i></a>
         </div>
+        <section id="hero">
         <div class="home-content">
             <h1>Szia, SPETI vagyok!</h1>
             <h3>Frontend fejlesztő!</h3>
             <p>Hány feminista kell egy villanykörte kicseréléséhez? Egy. Amíg én cserélem addig ő nyalogatja a kugim!</p>
             <a href="#" class="btn">Hire me</a>
+        </section>
+        <section id="foto">
         </div>
          <div class="home-img">
             <div class="glowing-circle">
@@ -42,9 +56,24 @@
                 <span></span>
                 <div class="image">
                     <img src="assets/homeself.png" alt="">
+        </section>
                 </div>
             </div>
          </div>
     </section>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+             dropDownMenu.classList.toggle('open')
+             const isOpen = dropDownMenu.classList.contains('open')
+
+             toggleBtnIcon.classList =  isOpen
+             ? 'fa-solid fa-xmark'
+             : 'fa-solid fa-bars'
+        }
+    </script> 
 </body>
 </html>
